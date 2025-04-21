@@ -1,20 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <h1>jQuery React Migration Demo</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h1 class="card-title">jQuery React Migration Demo</h1>
+                    <p class="card-text">This demo shows how to integrate jQuery and React in the same Django application.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
         <!-- jQuery controlled section -->
-        <div class="section jquery-section">
-            <h2>jQuery Section</h2>
-            <button id="jquery-load-data">Load Data with jQuery</button>
-            <div id="jquery-data-container"></div>
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0">jQuery Section</h2>
+                </div>
+                <div class="card-body">
+                    <!-- This button needs Bootstrap classes -->
+                    <button id="jquery-load-data" class="btn btn-primary mb-3">Load Data with jQuery</button>
+                    <div id="jquery-data-container"></div>
+                </div>
+            </div>
         </div>
 
         <!-- React controlled section -->
-        <div class="section react-section">
-            <h2>React Section</h2>
-            <div id="react-root"></div>
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 border-info">
+                <div class="card-header bg-info text-white">
+                    <h2 class="h4 mb-0">React Section</h2>
+                </div>
+                <div class="card-body">
+                    <div id="react-root"></div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
