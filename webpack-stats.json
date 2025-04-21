@@ -1,0 +1,16 @@
+{
+  "status": "done",
+  "assets": {
+    "main.js": {
+      "name": "main.js",
+      "path": "C:\\Users\\Meiirzhanb\\Desktop\\Projects\\django\\jqueryReactMigration\\static\\bundles\\main.js",
+      "publicPath": "/static/bundles/main.js"
+    }
+  },
+  "chunks": {
+    "main": [
+      "main.js"
+    ]
+  },
+  "publicPath": "/static/bundles/"
+}

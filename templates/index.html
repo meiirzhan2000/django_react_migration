@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>jQuery React Migration Demo</h1>
+
+        <!-- jQuery controlled section -->
+        <div class="section jquery-section">
+            <h2>jQuery Section</h2>
+            <button id="jquery-load-data">Load Data with jQuery</button>
+            <div id="jquery-data-container"></div>
+        </div>
+
+        <!-- React controlled section -->
+        <div class="section react-section">
+            <h2>React Section</h2>
+            <div id="react-root"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <!-- React bundled JavaScript -->
+    <script src="/static/bundles/main.js"></script>
+{% endblock %}
