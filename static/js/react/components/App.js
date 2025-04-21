@@ -1,13 +1,10 @@
-// static/js/react/components/App.js
 import React, { useState, useEffect } from 'react';
-// Import individual components (preferred method)
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
-// Import the Bootstrap CSS directly
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -58,12 +55,12 @@ const App = () => {
 
   return (
     <div className="react-container">
-      {/* CRITICAL: Use React-Bootstrap Button components, NOT regular HTML buttons */}
-      <div className="d-flex gap-2 mb-3">
-        <Button variant="primary" onClick={fetchData} disabled={loading}>
+      <div className="mb-3">
+        {/* These are React-Bootstrap Button components, not HTML buttons */}
+        <Button variant="primary" className="me-2" onClick={fetchData} disabled={loading}>
           {loading ? (
             <>
-              <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
+              <Spinner as="span" animation="border" size="sm" />
               <span className="ms-2">Loading...</span>
             </>
           ) : (
@@ -76,25 +73,25 @@ const App = () => {
       </div>
 
       {loading ? (
-        <div className="text-center">
+        <div className="text-center my-4">
           <Spinner animation="border" variant="primary" />
-          <p>Loading data...</p>
+          <p className="mt-2">Loading data...</p>
         </div>
       ) : (
         <div>
           {items.length > 0 && (
             <div>
-              <h5>Data loaded with React:</h5>
+              <h5 className="border-bottom pb-2 mb-3">Data loaded with React:</h5>
               <ListGroup>
                 {items.map(item => (
-                  <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
-                    <div>
-                      <h6 className="mb-0">{item.name}</h6>
-                      <p className="text-muted mb-0">{item.description}</p>
+                  <ListGroup.Item key={item.id}>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 className="mb-0">{item.name}</h6>
+                        <small className="text-muted">{item.description}</small>
+                      </div>
+                      <Badge bg="primary" pill>ID: {item.id}</Badge>
                     </div>
-                    <Badge bg="primary" pill>
-                      {item.id}
-                    </Badge>
                   </ListGroup.Item>
                 ))}
               </ListGroup>
@@ -103,7 +100,7 @@ const App = () => {
 
           {jqueryData && (
             <div className="mt-4">
-              <h5>Data loaded by jQuery (detected in React):</h5>
+              <h5 className="border-bottom pb-2 mb-3">Data loaded by jQuery (detected in React):</h5>
               <Card className="bg-light">
                 <Card.Body>
                   <pre>{JSON.stringify(jqueryData, null, 2)}</pre>
